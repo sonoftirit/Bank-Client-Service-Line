@@ -30,64 +30,77 @@ src/
 ├── ClientComparator.java
 ├── BankQueueDemo.java
 └── BankQueueSystem.java
+```
 
+## File Descriptions
 
-File Descriptions
-Client.java
+### `Client.java`
 
 Represents a bank client with:
 
-name
-type
-arrivalOrder
+- `name`
+- `type`
+- `arrivalOrder`
 
 Includes:
 
-constructor
-getters
-validation
-toString()
-ClientComparator.java
+- constructor
+- getters
+- validation
+- `toString()`
+
+### `ClientComparator.java`
 
 Defines the service priority rules:
 
-VIP first
-BUSINESS second
-REGULAR third
-Earlier arrivalOrder first when types are equal
-BankQueueDemo.java
+1. VIP first
+2. BUSINESS second
+3. REGULAR third
+4. Earlier `arrivalOrder` first when types are equal
 
-Creates a sample priority queue, adds clients, and prints the service order using repeated poll().
+### `BankQueueDemo.java`
 
-BankQueueSystem.java
+Creates a sample priority queue, adds clients, and prints the service order using repeated `poll()`.
+
+### `BankQueueSystem.java`
 
 Interactive program with the following menu:
 
+```text
 1) Add client
 2) Serve next client
 3) View next client
 4) Remove client by name
 5) Show waiting list
 6) Exit
-Validation Rules
-Client name cannot be empty or blank
-Client type must be VIP, BUSINESS, or REGULAR
-Menu choice must be an integer from 1 to 6
-Important Concept
+```
 
-A PriorityQueue does not display elements in sorted order when iterated directly.
+## Validation Rules
+
+- Client name cannot be empty or blank
+- Client type must be `VIP`, `BUSINESS`, or `REGULAR`
+- Menu choice must be an integer from `1` to `6`
+
+## Important Concept
+
+A `PriorityQueue` does not display elements in sorted order when iterated directly.  
 To show the waiting list correctly, this program creates a copy of the queue and polls from the copy.
 
-How to Run
+## How to Run
 
 Run either of these files:
 
-BankQueueDemo.java → simple priority queue demo
-BankQueueSystem.java → full interactive bank queue system
-Notes
-The service order is determined by the custom ClientComparator.
-The Client class ensures that invalid client objects cannot be created.
-The waiting list is displayed without destroying the original queue.
+- `BankQueueDemo.java` → simple priority queue demo
+- `BankQueueSystem.java` → full interactive bank queue system
 
-Author
-Mustafa Tiritoglu
+## Notes
+
+- The service order is determined by the custom `ClientComparator`.
+- The `Client` class ensures that invalid client objects cannot be created.
+- The waiting list is displayed without destroying the original queue.
+
+## Author
+
+Mustafa Tiritoglu | UBC - BSc. Computer Science
+
+
