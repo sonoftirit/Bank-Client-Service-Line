@@ -2,6 +2,7 @@ import java.util.Comparator;
 
 public class ClientComparator implements Comparator<Client> {
 
+    @Override
     public int compare(Client c1, Client c2){
         int c1Rank = getPriorityRank(c1.getType());
         int c2Rank = getPriorityRank(c2.getType());
