@@ -14,11 +14,10 @@ public class BankQueueDemo {
         queue.offer(new Client("F", "BUSINESS", 7));
         queue.offer(new Client("G", "REGULAR", 8));
 
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             System.out.println(queue.poll());
         }
 
-        
     }
 
 }
