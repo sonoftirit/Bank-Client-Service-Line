@@ -2,11 +2,39 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 /**
- * This program uses a PriorityQueue<Client> with ClientComparator so that VIP clients
+ * This program uses a PriorityQueue<Client> with ClientComparator so that VIP
+ * clients
  * are served first, then BUSINESS, then REGULAR, and ties are broken by smaller
- * arrivalOrder. The menu keeps running until the user chooses Exit. For showing the
- * waiting list and removing by name safely, the program makes a copy of the queue
+ * arrivalOrder. The menu keeps running until the user chooses Exit. For showing
+ * the
+ * waiting list and removing by name safely, the program makes a copy of the
+ * queue
  * and polls from the copy so the original queue is not destroyed.
+ */
+
+/*
+ * Part D Answers
+ * 1. What is the time complexity of offer(), poll(), and peek() in Java’s
+ * PriorityQueue?
+ * offer() → O(log n)
+ * poll() → O(log n)
+ * peek() → O(1)
+ * 2. Why doesn’t iterating a PriorityQueue show elements in priority order?
+ * 
+ * A PriorityQueue is implemented as a heap, not as a fully sorted list.
+ * It only guarantees that the head element is the highest priority element
+ * according to the comparator.
+ * Because of this, iterating through the queue does not show all elements in
+ * sorted service order.
+ * 
+ * 3. How does the comparator guarantee VIP clients are served first?
+ * 
+ * The comparator assigns the smallest priority rank to VIP clients, a larger
+ * rank to BUSINESS, and the largest rank to REGULAR.
+ * Since Java’s PriorityQueue removes the smallest element first, VIP clients
+ * are always served before the other types.
+ * If two clients have the same type, the comparator then compares arrivalOrder,
+ * so the client who arrived earlier is served first.
  */
 public class BankQueueSystem {
 
@@ -70,7 +98,7 @@ public class BankQueueSystem {
                     return choice;
                 }
             } catch (NumberFormatException e) {
-        
+
             }
 
             System.out.println("Invalid menu choice. Please enter a number 1-6.");
